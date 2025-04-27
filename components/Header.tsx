@@ -4,7 +4,7 @@ import React from 'react'
 import { Button } from './ui/button'
 import { ArrowLeft, CarFrontIcon, Heart, Layout } from 'lucide-react'
 
-const Header = ({ isAdminpage = true }) => {
+const Header = ({ isAdminpage = false }) => {
     const isAdmin = false
     return (
         <header className='px-8 py-4 bg-white/35 backdrop-blur-md z-50 border-b fixed top-0 left-0  max-w-full w-full '>
@@ -19,7 +19,7 @@ const Header = ({ isAdminpage = true }) => {
                 </Link>
                 <div className='flex gap-4'>
                     {isAdminpage ? (
-                        <Link href={"/saved-cars"}>
+                        <Link href={"/"}>
                             <Button size={"lg"} variant={'outline'}>
                                 <ArrowLeft size={20} />
                                 <span className='hidden md:inline'>Back to App</span></Button>
@@ -50,6 +50,15 @@ const Header = ({ isAdminpage = true }) => {
 
 
                     </SignedIn>}
+
+                    <SignedOut>
+                        <SignInButton>
+                            <Button size={"lg"} variant={'default'}>Sign In</Button>
+                        </SignInButton>
+                    </SignedOut>
+                    <SignedIn>
+                        <UserButton />
+                    </SignedIn>
 
 
 
