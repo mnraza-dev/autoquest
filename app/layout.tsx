@@ -4,7 +4,7 @@ import "./globals.css";
 import Link from "next/link";
 import Header from "@/components/Header";
 import {
-  ClerkProvider,
+  ClerkProvider
 } from '@clerk/nextjs'
 
 const inter = Inter({ subsets: ["latin"] });

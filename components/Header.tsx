@@ -3,7 +3,8 @@ import React from 'react'
 
 const Header = () => {
     return (
-        <nav className='flex items-center justify-between'>
+        <div className='flex items-center justify-between'>
+            <h1> Header</h1>
             <SignedOut>
                 <SignInButton />
                 <SignUpButton />
@@ -11,7 +12,7 @@ const Header = () => {
             <SignedIn>
                 <UserButton />
             </SignedIn>
-        </nav>
+        </div>
     )
 }
 
