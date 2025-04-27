@@ -52,16 +52,13 @@ const Header = ({ isAdminpage = false }) => {
                     </SignedIn>}
 
                     <SignedOut>
-                        <SignInButton>
+                        <SignInButton forceRedirectUrl={"/"}>
                             <Button size={"lg"} variant={'default'}>Sign In</Button>
                         </SignInButton>
                     </SignedOut>
                     <SignedIn>
-                        <UserButton />
+                        <UserButton appearance={{ elements: { avatarBox: "w-10 h-10" } }} />
                     </SignedIn>
-
-
-
                 </div>
 
             </nav>
