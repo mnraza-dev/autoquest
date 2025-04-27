@@ -2,19 +2,29 @@ import { SignedIn, SignedOut, SignInButton, SignUpButton, UserButton } from '@cl
 import Link from 'next/link'
 import React from 'react'
 import { Button } from './ui/button'
-import { CarFrontIcon, Heart, Layout } from 'lucide-react'
+import { ArrowLeft, CarFrontIcon, Heart, Layout } from 'lucide-react'
 
-const Header = ({ isAdminpage = false }) => {
+const Header = ({ isAdminpage = true }) => {
     const isAdmin = false
     return (
         <header className='px-8 py-4 bg-white/35 backdrop-blur-md z-50 border-b fixed top-0 left-0  max-w-full w-full '>
 
             <nav className=' flex justify-between'>
                 <Link href={isAdminpage ? "/admin" : "/"} className='text-2xl  font-medium'>
-                    <span className='mr-2 font-light text-red-400'>  Auto</span>Quest
+                    <span className='mr-1 font-medium text-red-400'>  Auto</span>Quest
+
+                    {isAdminpage && (
+                        <span className='font-extralight text-xs'>admin</span>
+                    )}
                 </Link>
                 <div className='flex gap-4'>
-                    <SignedIn>
+                    {isAdminpage ? (
+                        <Link href={"/saved-cars"}>
+                            <Button size={"lg"} variant={'outline'}>
+                                <ArrowLeft size={20} />
+                                <span className='hidden md:inline'>Back to App</span></Button>
+                        </Link>
+                    ) : <SignedIn>
                         <Link href={"/saved-cars"}>
                             <Button size={"lg"} variant={'default'}>
                                 <Heart size={20} />
@@ -22,7 +32,7 @@ const Header = ({ isAdminpage = false }) => {
                         </Link>
                         {!isAdmin ? (
                             <Link href={"/reservations"}>
-                                <Button size={"lg"} variant={'outline'}>
+                                <Button size={"lg"} variant={'default'}>
                                     <CarFrontIcon size={20} />
                                     <span className='hidden md:inline'>
                                         My Reservations
@@ -39,7 +49,8 @@ const Header = ({ isAdminpage = false }) => {
                             )}
 
 
-                    </SignedIn>
+                    </SignedIn>}
+
 
 
                 </div>
