@@ -29,11 +29,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
 
-        <main>
+        <main className="min-h-screen ">
           {children}
         </main>
-        <footer>
-          <div>
+        <footer className="bg-blue-50 p-12">
+          <div className="container mx-auto px-4 text-center text-gray-600">
             <p>Made with ♥️ by  <Link href="https://x.com/mnraza1907">MN Raza</Link></p>
           </div>
         </footer>
