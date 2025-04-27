@@ -4,8 +4,8 @@ import React from 'react'
 const Home = () => {
   return (
     <div>
-      
       <Button size={"lg"} variant="default"> Click me</Button>
+      
     </div>
   )
 }

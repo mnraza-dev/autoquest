@@ -25,7 +25,7 @@ export default function RootLayout({
         className={`${inter.className} antialiased`}
       >
         <Header />
-        <main className="min-h-screen ">
+        <main className="min-h-screen max-w-full mt-24 px-16">
           {children}
         </main>
         <footer className="bg-blue-50 p-12">

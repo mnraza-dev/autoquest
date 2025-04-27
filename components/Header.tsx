@@ -14,7 +14,7 @@ const Header = ({ isAdminpage = true }) => {
                     <span className='mr-1 font-medium text-red-400'>  Auto</span>Quest
 
                     {isAdminpage && (
-                        <span className='font-extralight text-xs'>admin</span>
+                        <span className='font-light text-red-600 text-xs absolute top-2 left-42'>admin</span>
                     )}
                 </Link>
                 <div className='flex gap-4'>
